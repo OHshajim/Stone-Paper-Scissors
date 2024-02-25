@@ -12,20 +12,35 @@
 
 <body >
     <header>
-       <div class="mb-4 flex flex-col  items-center bg-orange-800  pt-5 pb-2">
+        <div class="mb-4 flex flex-col  items-center bg-orange-800  pt-5 pb-2">
         <h1 class=" text-2xl font-extrabold">Stone, Paper & Scissors</h1>
         <p class="text-base text-[#b4b0aeb0] font-medium">let's play </p>
        </div>
     </header>
     <main>
-        <section>
-            <div class="flex justify-evenly">
-                <img src="./img/Stone.png" class="w-44 h-40 border-[5px] border-black rounded-full" alt="Stone">
-                <img src="./img/scissors-png.png" class="w-44 h-40 border-[5px] border-black rounded-full" alt="Scissors">
-                <img src="./img/images.png" class="w-44 h-40 border-[5px] border-black rounded-full" alt="Paper ">
+        <section class="">
+            <div class="flex flex-col lg:flex-row justify-evenly items-center space-y-4 lg:my-40">
+                <img id="Stone" src="./img/Stone.png" class="pic w-40 h-40 hover:opacity-80 hover:cursor-pointer hover:border-orange-800 border-[8px] border-black rounded-full" alt="Stone">
+
+                <img id="Paper" src="./img/images.png" class="pic w-40 h-40 hover:opacity-80 hover:cursor-pointer border-[8px] hover:border-orange-800 border-black rounded-full" alt="Paper ">
+                
+                <img id="Scissors" src="./img/scissors.png" class="pic w-40 h-40 hover:opacity-80 hover:cursor-pointer border-[8px] hover:border-orange-800 border-black rounded-full" alt="Scissors">
+            </div>
+            <div class="flex justify-evenly items-center">
+                <div class="text-2xl font-bold flex flex-col items-center">
+                    <h1 id="my-score">0</h1>
+                    <p>Me</p>
+                </div>
+                <div class="text-2xl font-bold flex flex-col items-center">
+                    <h1 id="cm-score">0</h1>
+                    <p>Computer</p>
+                </div>
+            </div>
+            <div class="flex flex-col items-center mt-5">
+              <h1 id="win-text" class="text-2xl font-extrabold bg-orange-800 px-10 py-3 rounded-lg">play</h1>
             </div>
         </section>
+        <script src="./index.js"></script>
     </main>
 </body>
-
 </html>
