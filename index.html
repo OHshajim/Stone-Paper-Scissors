@@ -1,11 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" >
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Stone, Paper & Scissors</title>
+    <!-- tailwind and daisy ui link-->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-    
+
+<body >
+    <header>
+       <div class="mb-4 flex flex-col  items-center bg-orange-800  pt-5 pb-2">
+        <h1 class=" text-2xl font-extrabold">Stone, Paper & Scissors</h1>
+        <p class="text-base text-[#b4b0aeb0] font-medium">let's play </p>
+       </div>
+    </header>
+    <main>
+        <section>
+            <div class="flex justify-evenly">
+                <img src="./img/Stone.png" class="w-44 h-40 border-[5px] border-black rounded-full" alt="Stone">
+                <img src="./img/scissors-png.png" class="w-44 h-40 border-[5px] border-black rounded-full" alt="Scissors">
+                <img src="./img/images.png" class="w-44 h-40 border-[5px] border-black rounded-full" alt="Paper ">
+            </div>
+        </section>
+    </main>
 </body>
+
 </html>
