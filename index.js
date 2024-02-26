@@ -1,5 +1,10 @@
 const options = document.querySelectorAll('.pic')
 const WinOutput = document.getElementById("win-text")
+const myScore = document.getElementById("my-score");
+const cmScore = document.getElementById("cm-score");
+let win = 1 ;
+let lose =1 ;
+
 // computer chose
 const computerChose = () => {
     const option = ["Stone", "Paper", "Scissors"]
@@ -8,20 +13,25 @@ const computerChose = () => {
 };
 
 const drawGame = () => {
-    WinOutput.innerText = "game draw"
+    WinOutput.innerText = "Game draw , Play again" ;
     console.log("game draw");
 };
 
-const ShowWinner = (userWin) => {
+const ShowWinner = (userWin,Id ,computer) => {
     if (userWin) {
         console.log("you win");
-        WinOutput.innerText = "my sweet wife win thats why ummmmmmmmmmmmmmmmma !!!"
+        WinOutput.innerText = `You win ! Your ${Id} beat the ${computer}`
+        myScore.innerText = win ;
+        win++ ;
     }
     else {
         console.log("you lose");
-        WinOutput.innerText = "Tasnim Alo  loser "
+        WinOutput.innerText = ` loser !!! the ${computer} beat Your ${Id}`
+        cmScore.innerText = lose ;
+        lose++ ;
     }
 };
+
 
 const gamePlay = (Id) => {
     console.log("user chose :", Id);
@@ -35,28 +45,30 @@ const gamePlay = (Id) => {
     }
     else {
         let userWin = true
+        // stone
         if (Id === "Stone") {
             userWin = computer === "Paper" ? false : true;
         }
+
+        // paper
         else if (Id === "Paper") {
             userWin = computer === "Scissors" ? false : true;
         }
+
+        // scissor
         else {
             userWin = computer === "Stone" ? false : true;
         }
 
-        ShowWinner(userWin);
+        ShowWinner(userWin,Id ,computer);
     };
 };
 
 
-
+// click part
 options.forEach((option) => {
     option.addEventListener("click", function () {
-        // console.log(option);
-        option.classList.add('border-orange-800')
-        const choseID = option.getAttribute("id")
-
+        const choseID = option.getAttribute("id")        
         gamePlay(choseID)
     })
 }); 
